@@ -20,8 +20,8 @@ app.config['APP_URL'] = os.getenv('APP_URL', 'http://localhost:5000')  # must be
 app.config['APP_CLIENT_ID'] = os.getenv('APP_CLIENT_ID')
 app.config['APP_CLIENT_SECRET'] = os.getenv('APP_CLIENT_SECRET')
 app.config['SESSION_SECRET'] = os.getenv('SESSION_SECRET', os.urandom(64))
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'sqlite:///data/hello_world.sqlite').replace("postgres://", "postgresql://", 1)
-app.config['SQLALCHEMY_ECHO'] = app.config['DEBUG']
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'sqlite:///data/hello_world.sqlite')
+#app.config['SQLALCHEMY_ECHO'] = app.config['DEBUG']
 app.config['SESSION_COOKIE_SAMESITE'] = "None"
 app.config['SESSION_COOKIE_SECURE'] = True
 
