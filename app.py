@@ -24,6 +24,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'sqlite:///dat
 app.config['SQLALCHEMY_ECHO'] = app.config['DEBUG']
 app.config['SESSION_COOKIE_SAMESITE'] = "None"
 app.config['SESSION_COOKIE_SECURE'] = True
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Setup secure cookie secret
 app.secret_key = app.config['SESSION_SECRET']
