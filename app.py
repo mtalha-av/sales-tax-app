@@ -13,7 +13,7 @@ if os.path.exists('.env'):
     dotenv.load_dotenv('.env')
 
 # Load configuration from environment, with defaults
-#app.config['DEBUG'] = True if os.getenv('DEBUG') == 'True' else False
+app.config['DEBUG'] = True if os.getenv('DEBUG') == 'True' else False
 app.config['LISTEN_HOST'] = os.getenv('LISTEN_HOST', '0.0.0.0')
 app.config['LISTEN_PORT'] = int(os.getenv('LISTEN_PORT', '5000'))
 app.config['APP_URL'] = os.getenv('APP_URL', 'http://localhost:5000')  # must be https to avoid browser issues
@@ -21,7 +21,7 @@ app.config['APP_CLIENT_ID'] = os.getenv('APP_CLIENT_ID')
 app.config['APP_CLIENT_SECRET'] = os.getenv('APP_CLIENT_SECRET')
 app.config['SESSION_SECRET'] = os.getenv('SESSION_SECRET', os.urandom(64))
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'sqlite:///data/hello_world.sqlite')
-#app.config['SQLALCHEMY_ECHO'] = app.config['DEBUG']
+app.config['SQLALCHEMY_ECHO'] = app.config['DEBUG']
 app.config['SESSION_COOKIE_SAMESITE'] = "None"
 app.config['SESSION_COOKIE_SECURE'] = True
 
